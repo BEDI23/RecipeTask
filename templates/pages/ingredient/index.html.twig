@@ -3,5 +3,11 @@
 {% block title %}RecipeTsk mes ingredients{% endblock %}
 
 {% block body %}
-   {{ ingredient.name }}
+    {% if Ingredient == true %}
+        {% for ingredient in Ingredient  %}
+            {{ ingredient.name }}
+            {{ ingredient.prix }}
+            {{ ingredient.creatAt | date('d/m/Y') }}
+        {% endfor %}
+    {% endif %}
 {% endblock %}
