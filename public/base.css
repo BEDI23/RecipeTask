@@ -1,5 +1,5 @@
 .bg-mynav {
-    background-color: #2c3e50;
+    background-color: #0b4073;
 }
 
 body {
@@ -13,4 +13,8 @@ td {
 .ingredient-item {
     display: flex;
     flex-direction: column;
+}
+.navigation {
+    display: flex; /* Allow flexbox layout */
+    justify-content: center; /* Center elements horizontally */
 }

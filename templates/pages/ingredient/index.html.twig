@@ -3,14 +3,35 @@
 {% block title %}RecipeTsk mes ingredients{% endblock %}
 
 {% block body %}
+<div class="table-responsive">
+   <table class="table">
+      <thead>
+      <tr>
+         <th scope="col">#</th>
+         <th scope="col">Name</th>
+         <th scope="col">Price </th>
+         <th scope="col">Date </th>
+
+      </tr>
+      </thead>
+      <tbody id="mytable">
    {% if Ingredient == true %}
       {% for ingredient in Ingredient %}
          <tr>
             <th scope="row">{{ ingredient.id }}</th>
             <td>{{ ingredient.name }}</td>
-            <td>{{ ingredient.prix }}</td> <td>{{ ingredient.creatAt | date('d/m/Y') }}</td>
+            <td>{{ ingredient.prix }}</td>
+            <td>{{ ingredient.creatAt | date('d/m/Y') }}</td>
          </tr>
       {% endfor %}
    {% endif %}
+      </tbody>
+   </table>
+   <div class="navigation " >
+      {{ knp_pagination_render(Ingredient) }}
+   </div>
+</div>
+
+
 {% endblock %}
 
