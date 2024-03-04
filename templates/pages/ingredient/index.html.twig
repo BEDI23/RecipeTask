@@ -3,5 +3,14 @@
 {% block title %}RecipeTsk mes ingredients{% endblock %}
 
 {% block body %}
-   {{ ingredient.name }}
+   {% if Ingredient == true %}
+      {% for ingredient in Ingredient %}
+         <tr>
+            <th scope="row">{{ ingredient.id }}</th>
+            <td>{{ ingredient.name }}</td>
+            <td>{{ ingredient.prix }}</td> <td>{{ ingredient.creatAt | date('d/m/Y') }}</td>
+         </tr>
+      {% endfor %}
+   {% endif %}
 {% endblock %}
+
