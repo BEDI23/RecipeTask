@@ -5,9 +5,11 @@ namespace App\Entity;
 use App\Repository\IngrediantRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: IngrediantRepository::class)]
+#[ApiResource]
+
 class Ingrediant
 {
     #[ORM\Id]
