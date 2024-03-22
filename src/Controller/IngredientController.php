@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class IngredientController extends AbstractController
 {
-    #[Route('/list', name: 'list', methods: ['GET'])]
+    #[Route('/', name: 'list', methods: ['GET'])]
     public function index(IngrediantRepository $repository, PaginatorInterface $paginator ,Request $request): Response
     {
         $ingredient = $paginator->paginate(
@@ -27,7 +27,7 @@ class IngredientController extends AbstractController
             'Ingredient'=>$ingredient
         ]);
     }
-    #[Route('/', name: 'new',methods: ['GET','POST'])]
+    #[Route('/new', name: 'new',methods: ['GET','POST'])]
     public function new(Request $request, EntityManagerInterface $manager) : Response
     {
         $ingredient = new Ingrediant();
