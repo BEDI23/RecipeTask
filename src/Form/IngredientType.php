@@ -4,6 +4,8 @@ namespace App\Form;
 
 use App\Entity\Ingrediant;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -31,8 +33,24 @@ class IngredientType extends AbstractType
                     new Assert\NotBlank()
                     ]
             ])
-            ->add('prix')
-            ->add('submit')
+            ->add('prix',MoneyType::class, [
+                'attr' => [
+                    'class'=>'form-control',
+                ],
+                'label' => 'prix',
+                'label_attr' => [
+                    'class' => 'from-label mt-4'
+                ],
+                'constraints'=>[
+                    new Assert\Positive(),
+                    new Assert\LessThan(200)
+                ]
+            ])
+            ->add('submit', SubmitType::class,[
+                'attr' => [
+                    'class'=>'btn btn-primary mt-4',],
+                    'label' => 'Create',
+        ])
         ;
     }
 
