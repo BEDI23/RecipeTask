@@ -73,7 +73,7 @@ class IngredientController extends AbstractController
         ]);
     }
 
-    #[Route('/delete/{id}', name: 'delete', methods: ['GET','POST'])]
+    #[Route('/delete/{id}', name: 'delete', methods: ['GET',])]
     public function delete(EntityManagerInterface $manager, Ingrediant $ingrediant) : Response
     {
         if (!$ingrediant){
