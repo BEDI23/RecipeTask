@@ -3,6 +3,12 @@
 {% block title %}RecipeTsk mes ingredients{% endblock %}
 
 {% block body %}
+   <div class="d-flex bd-highlight mb-3">
+      <div class="me-auto p-2 bd-highlight"><h2>User</h2></div>
+      <div class="p-2 bd-highlight">
+         <button type="button"  class="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
+      </div>
+   </div>
 <div class="table-responsive">
    <table class="table">
       <thead>
@@ -24,12 +30,14 @@
             <td>{{ ingredient.creatAt | date('d/m/Y') }}</td>
          </tr>
       {% endfor %}
-   {% endif %}
       </tbody>
    </table>
    <div class="navigation " >
       {{ knp_pagination_render(Ingredient) }}
    </div>
+   {% else %}
+   <h4>Il n y a pas dingredient </h4>
+   {% endif %}
 </div>
 
 
