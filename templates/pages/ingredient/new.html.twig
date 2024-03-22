@@ -5,6 +5,28 @@
 {% block body %}
     <div class="contain">
     <h1>Add  ingredient </h1>
-        {{ form(form) }}
+        {{ form_start(form) }}
+
+        <div class="form-group">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+            <div class="form-error">
+                {{ form_errors(form.name) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.prix) }}
+            {{ form_widget(form.prix) }}
+            <div class="form-error">
+                {{ form_errors(form.prix) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_row(form.submit) }}
+        </div>
+        {{ form_end(form) }}
+
     </div>
 {% endblock %}

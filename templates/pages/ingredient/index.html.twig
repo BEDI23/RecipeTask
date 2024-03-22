@@ -8,6 +8,11 @@
       <div class="p-2 bd-highlight">
          <button type="button"  class="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
       </div>
+      {% for message in app.flashes('Success') %}
+         <div class=" alert alert-success mtn-4">
+            {{ message }}
+         </div>
+      {% endfor %}
    </div>
 <div class="table-responsive">
    <table class="table">
